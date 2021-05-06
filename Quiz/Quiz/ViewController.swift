@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet var quesitonLable: UILabel!
+    @IBOutlet var quesitonLabel: UILabel!
     @IBOutlet var answerLabel: UILabel!
     
     private let questions:[String] = [
@@ -29,16 +29,17 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        quesitonLable.text = questions.first
+        quesitonLabel.text = questions.first
+
     }
     
     @IBAction func showNextQuestion(_ sender: UIButton) {
         currentQuestionIndex += 1
-        if currentQuestionIndex == questions.count {
+        if currentQuestionIndex == questions.count  {
             currentQuestionIndex = 0
         }
         let question = questions[currentQuestionIndex]
-        quesitonLable.text = question
+        quesitonLabel.text = question
         answerLabel.text = "???"
     }
     

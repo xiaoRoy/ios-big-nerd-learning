@@ -58,12 +58,12 @@
                     </view>
                     <connections>
                         <outlet property="answerLabel" destination="SNG-hO-VbH" id="9fn-3q-QWk"/>
-                        <outlet property="quesitonLable" destination="5k6-hU-oBf" id="qKO-Sh-I0O"/>
+                        <outlet property="quesitonLabel" destination="5k6-hU-oBf" id="76S-My-4UL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-361" y="6"/>
+            <point key="canvasLocation" x="-362.31884057971018" y="5.3571428571428568"/>
         </scene>
     </scenes>
     <resources>
