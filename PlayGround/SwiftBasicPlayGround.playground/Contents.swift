@@ -30,4 +30,46 @@ fruits.append("orange")
 
 //MARK:- Optional
 
+var reading1: Float? = 9.8
+var reading2: Float? = 9.2
+var reading3: Float? = 9.3
+
+let averageReadingNotSafe = (reading1! + reading2! + reading3!) / 3
+
+if let r1 = reading1,
+   let r2 = reading2,
+   let r3 = reading3 {
+    let averageReading = (r1 + r2 + r3) / 3
+    print(averageReading)
+} else {
+    print("Instrument reported a reading that was nil")
+}
+
+//MARK:- Subscripting dictionary
+let namesById:[Int:String] = [1 : "Jane", 2 : "Mary", 3: "Lucy"]
+
+if let one = namesById[1] {
+    print(one)
+}
+
+//MARK:- Loops and String Interpolation
+
+let readings: Array<Float> = [1.2, 32.1, 123.2, 42.1]
+for reading in readings {
+    print(reading)
+}
+
+let nameByParkingSpace = [13: "Alice", 27 : "Bob"]
+
+for (space, name) in nameByParkingSpace {
+    let permit = "Space \(space):\(name)"
+    print(permit)
+}
+
+//MARK:- Enumeration and the Swtich statement
+enum PieType {
+    case apple
+    case cherry
+    case pecan
+}
 
