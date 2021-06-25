@@ -73,3 +73,20 @@ enum PieType {
     case pecan
 }
 
+//MARK:- Enumeration and raw values
+enum Fruit: String {    
+    case apple
+    case orange
+    case peach = "PEACH"
+    case pear
+}
+
+if let apple = Fruit(rawValue: "apple") {
+    print(apple)
+}
+
+if let peach = Fruit(rawValue: "peach") {
+    print(peach)
+} else {
+    print("It's not peach!")
+}
