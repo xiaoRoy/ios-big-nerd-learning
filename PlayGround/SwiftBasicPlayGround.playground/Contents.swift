@@ -74,7 +74,7 @@ enum PieType {
 }
 
 //MARK:- Enumeration and raw values
-enum Fruit: String {    
+enum Fruit: String {
     case apple
     case orange
     case peach = "PEACH"
@@ -90,3 +90,10 @@ if let peach = Fruit(rawValue: "peach") {
 } else {
     print("It's not peach!")
 }
+
+let compareAsceding = { (one: Int, another: Int) -> Bool in
+    return one < another
+}
+
+var numbersB = [1, 45, 12, 29]
+numbersB.sort(by: compareAsceding)
