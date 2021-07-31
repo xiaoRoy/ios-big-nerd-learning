@@ -14,6 +14,13 @@ class ViewController: UIViewController {
         
     }
     
+    override func viewWillLayoutSubviews() {
+        let grdiantLayer = CAGradientLayer()
+        grdiantLayer.colors = [UIColor.red.cgColor, UIColor.green.cgColor, UIColor.blue.cgColor]
+        grdiantLayer.frame.size = view.frame.size
+        view.layer.insertSublayer(grdiantLayer, at: 0)
+    }
+    
     private func addViews() {
         let firstFrame = CGRect(x: 160, y: 240, width: 100, height: 150)
         let firstView = UIView(frame: firstFrame)
