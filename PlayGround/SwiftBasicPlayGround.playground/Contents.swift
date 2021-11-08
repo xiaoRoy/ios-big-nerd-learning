@@ -99,3 +99,5 @@ var numbersB = [1, 45, 12, 29]
 numbersB.sort(by: compareAsceding)
 
 numbersB.sort(by: {(one, anohter) -> Bool in return one > anohter})
+
+print(NSNull())
