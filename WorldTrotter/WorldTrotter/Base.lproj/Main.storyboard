@@ -10,11 +10,7 @@
         <!--Map-->
         <scene sceneID="M0B-9E-JqI">
             <objects>
-                <viewController id="cRI-B5-VZK" sceneMemberID="viewController">
-                    <mapView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="J8N-Wz-kkH">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </mapView>
+                <viewController id="cRI-B5-VZK" customClass="MapViewController" customModule="WorldTrotter" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Map" image="MapIcon" id="oYf-1A-Uoo"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hIg-RX-Bm2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -24,7 +20,7 @@
         <!--Convert-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WorldTrotter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ConversionViewController" customModule="WorldTrotter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
