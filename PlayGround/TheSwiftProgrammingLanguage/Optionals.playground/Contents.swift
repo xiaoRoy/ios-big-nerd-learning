@@ -2,7 +2,7 @@ import UIKit
 
 var message: String? = "hello"
 
-print(message)
+print(message!)
 
 //optional binding
 let possibleNumber = "123a"
@@ -24,3 +24,15 @@ func showMatchedNumber(number: String) {
 showMatchedNumber(number: "12")
 showMatchedNumber(number: "92")
 
+//Implicitly Unwrapped Optionals
+
+let possibleString: String? = nil
+print("The count of the \"possibleString\" is \(possibleString?.count).")
+
+let assumedString: String! = "An implicitly unwrapped optioanl string"
+print("The count of \"assumedString\" is \(assumedString.count).")
+
+let number = 1
+number.description
+
+let optionalString = assumedString

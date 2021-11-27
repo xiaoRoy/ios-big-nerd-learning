@@ -15,11 +15,22 @@ class ConversionViewController: UIViewController {
         
     }
     
+    private func generateRandomColor() -> CGFloat{
+        return CGFloat.random(in: 0.0...1.0)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let red = generateRandomColor()
+        let green = generateRandomColor()
+        let blue = generateRandomColor()
+        view.backgroundColor = UIColor(red: red, green: green, blue: blue, alpha: 1.0)
+    }
+    
     override func viewWillLayoutSubviews() {
         let grdiantLayer = CAGradientLayer()
         grdiantLayer.colors = [UIColor.red.cgColor, UIColor.green.cgColor, UIColor.blue.cgColor]
         grdiantLayer.frame.size = view.frame.size
-        view.layer.insertSublayer(grdiantLayer, at: 0)
+//        view.layer.insertSublayer(grdiantLayer, at: 0)
     }
     
     private func addViews() {
