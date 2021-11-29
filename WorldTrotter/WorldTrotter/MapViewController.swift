@@ -24,6 +24,8 @@ class MapViewController: UIViewController {
         segmentedControl.backgroundColor = UIColor.systemBackground
         segmentedControl.selectedSegmentIndex = 0;
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
+        
+        segmentedControl.addTarget(self, action: #selector(mapTypeChaged(_:)), for: .valueChanged)
         view.addSubview(segmentedControl)
         
         
@@ -34,6 +36,14 @@ class MapViewController: UIViewController {
         NSLayoutConstraint.activate([topConstraint, leadingConstraint, trailingConstraint])
         
       
+    }
+    
+    @objc
+    private func mapTypeChaged(_ mapControl: UISegmentedControl) {
+        let mapTypeDictionary = [0: MKMapType.standard, 1: MKMapType.hybrid, 2: MKMapType.satellite]
+        if let mapType = mapTypeDictionary[mapControl.selectedSegmentIndex] {
+            mapView.mapType = mapType
+        }
     }
     
     override func viewDidLoad() {
