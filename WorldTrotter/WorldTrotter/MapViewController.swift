@@ -28,7 +28,7 @@ class MapViewController: UIViewController {
         segmentedControl.selectedSegmentIndex = 0;
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
         
-        segmentedControl.addTarget(self, action: #selector(mapTypeChaged(_:)), for: .valueChanged)
+        segmentedControl.addTarget(self, action: #selector(mapTypeChanged(_:)), for: .valueChanged)
         view.addSubview(segmentedControl)
         
         
@@ -40,21 +40,22 @@ class MapViewController: UIViewController {
     }
     
     private func setupPointsOfInterest() {
-        let labelPointOfInterest = UILabel()
-        labelPointOfInterest.text = "Points of Interest"
-        labelPointOfInterest.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(labelPointOfInterest)
+        let labelPointsOfInterest = UILabel()
+        labelPointsOfInterest.text = "Points of Interest"
+        labelPointsOfInterest.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(labelPointsOfInterest)
         
-        let switchPointOfInterest = UISwitch()
-        switchPointOfInterest.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(switchPointOfInterest)
+        let switchPointsOfInterest = UISwitch()
+        switchPointsOfInterest.translatesAutoresizingMaskIntoConstraints = false
+        switchPointsOfInterest.addTarget(self, action: #selector(hasPointsOfInterestChanged(_:)), for: UIControl.Event.valueChanged)
+        view.addSubview(switchPointsOfInterest)
         
-        let switchLeadingConstraint = switchPointOfInterest.leadingAnchor.constraint(equalTo: labelPointOfInterest.trailingAnchor, constant: 16.0)
-        let switchTopConstraint = switchPointOfInterest.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 8.0)
+        let switchLeadingConstraint = switchPointsOfInterest.leadingAnchor.constraint(equalTo: labelPointsOfInterest.trailingAnchor, constant: 16.0)
+        let switchTopConstraint = switchPointsOfInterest.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 8.0)
        
         
-        let labelLeadingConstraint = labelPointOfInterest.leadingAnchor.constraint(equalTo: segmentedControl.leadingAnchor)
-        let labelTopConstraint = labelPointOfInterest.centerYAnchor.constraint(equalTo: switchPointOfInterest.centerYAnchor)
+        let labelLeadingConstraint = labelPointsOfInterest.leadingAnchor.constraint(equalTo: segmentedControl.leadingAnchor)
+        let labelTopConstraint = labelPointsOfInterest.centerYAnchor.constraint(equalTo: switchPointsOfInterest.centerYAnchor)
         
         
         NSLayoutConstraint.activate([labelLeadingConstraint, labelTopConstraint, switchLeadingConstraint, switchTopConstraint])
@@ -62,11 +63,16 @@ class MapViewController: UIViewController {
     
     
     @objc
-    private func mapTypeChaged(_ mapControl: UISegmentedControl) {
+    private func mapTypeChanged(_ mapControl: UISegmentedControl) {
         let mapTypeDictionary = [0: MKMapType.standard, 1: MKMapType.hybrid, 2: MKMapType.satellite]
         if let mapType = mapTypeDictionary[mapControl.selectedSegmentIndex] {
             mapView.mapType = mapType
         }
+    }
+    
+    @objc
+    private func hasPointsOfInterestChanged(_ switchPointsOfInterect: UISwitch) {
+        print("Switch is on:\(switchPointsOfInterect.isOn)")
     }
     
     override func viewDidLoad() {
