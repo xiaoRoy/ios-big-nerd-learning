@@ -56,16 +56,29 @@
                                 <color key="textColor" red="0.88235294119999996" green="0.34509803919999998" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vxl-3K-lsE">
+                                <rect key="frame" x="128" y="445" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hlp-YC-Jpz">
+                                <rect key="frame" x="234" y="440" width="51" height="31"/>
+                            </switch>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.96078431372549022" green="0.95686274509803915" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="zB0-H7-bfm" firstAttribute="top" secondItem="qJ5-xZ-PGP" secondAttribute="bottom" constant="8" id="08u-6y-DHH"/>
+                            <constraint firstItem="vxl-3K-lsE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="128" id="Fvw-dz-hfL"/>
                             <constraint firstItem="E8S-mf-r5C" firstAttribute="top" secondItem="6Et-Ha-geH" secondAttribute="bottom" constant="8" id="Joa-l5-h9i"/>
                             <constraint firstItem="qJ5-xZ-PGP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="LEQ-zX-IXa"/>
+                            <constraint firstItem="hlp-YC-Jpz" firstAttribute="leading" secondItem="vxl-3K-lsE" secondAttribute="trailing" constant="64" id="MwS-7C-Spk"/>
                             <constraint firstItem="7vD-l4-oik" firstAttribute="centerX" secondItem="qJ5-xZ-PGP" secondAttribute="centerX" id="T3p-TC-rVP"/>
+                            <constraint firstItem="hlp-YC-Jpz" firstAttribute="centerY" secondItem="vxl-3K-lsE" secondAttribute="centerY" id="Ymx-j9-Olw"/>
                             <constraint firstItem="E8S-mf-r5C" firstAttribute="centerX" secondItem="qJ5-xZ-PGP" secondAttribute="centerX" id="YrJ-Iv-jv5"/>
                             <constraint firstItem="6Et-Ha-geH" firstAttribute="top" secondItem="zB0-H7-bfm" secondAttribute="bottom" constant="8" id="dF2-km-JFD"/>
+                            <constraint firstItem="vxl-3K-lsE" firstAttribute="top" secondItem="7vD-l4-oik" secondAttribute="bottom" constant="64" id="fvQ-0x-RQ8"/>
                             <constraint firstItem="6Et-Ha-geH" firstAttribute="centerX" secondItem="qJ5-xZ-PGP" secondAttribute="centerX" id="jBo-1q-qNo"/>
                             <constraint firstItem="zB0-H7-bfm" firstAttribute="centerX" secondItem="qJ5-xZ-PGP" secondAttribute="centerX" id="jDk-jH-lwH"/>
                             <constraint firstItem="7vD-l4-oik" firstAttribute="top" secondItem="E8S-mf-r5C" secondAttribute="bottom" constant="8" id="lpz-up-6Oj"/>
