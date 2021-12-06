@@ -72,7 +72,15 @@ class MapViewController: UIViewController {
     
     @objc
     private func hasPointsOfInterestChanged(_ switchPointsOfInterect: UISwitch) {
-        print("Switch is on:\(switchPointsOfInterect.isOn)")
+        let hasPointsOfInterest = switchPointsOfInterect.isOn
+        let pointOfInterestFilter: MKPointOfInterestFilter
+        if hasPointsOfInterest {
+            pointOfInterestFilter = MKPointOfInterestFilter.includingAll
+        } else {
+            pointOfInterestFilter = MKPointOfInterestFilter.excludingAll
+        }
+        mapView.pointOfInterestFilter = pointOfInterestFilter
+        print("Switch is on:\(hasPointsOfInterest)")
     }
     
     override func viewDidLoad() {
