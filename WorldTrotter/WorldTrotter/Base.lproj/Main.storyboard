@@ -18,6 +18,16 @@
             </objects>
             <point key="canvasLocation" x="790" y="-163"/>
         </scene>
+        <!--Second-->
+        <scene sceneID="FeE-bK-E5w">
+            <objects>
+                <viewController id="U5g-H4-ztA" customClass="SecondConversionViewController" customModule="WorldTrotter" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Second" id="AOf-5K-tYu"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qrU-Q4-3qF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2120" y="142"/>
+        </scene>
         <!--Convert-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -104,6 +114,7 @@
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="6R1-uH-IxV"/>
                         <segue destination="cRI-B5-VZK" kind="relationship" relationship="viewControllers" id="h6M-Wh-ouC"/>
+                        <segue destination="U5g-H4-ztA" kind="relationship" relationship="viewControllers" id="Az2-Te-OVX"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ldp-fJ-3O5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

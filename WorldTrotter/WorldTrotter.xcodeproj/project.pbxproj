@@ -16,6 +16,7 @@
 		C4EDCCA526883C3200DC397B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4EDCCA326883C3200DC397B /* LaunchScreen.storyboard */; };
 		C4EDCCB026883C3200DC397B /* WorldTrotterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EDCCAF26883C3200DC397B /* WorldTrotterTests.swift */; };
 		C4EDCCBB26883C3200DC397B /* WorldTrotterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EDCCBA26883C3200DC397B /* WorldTrotterUITests.swift */; };
+		C8ED6574275FBC8600A6A771 /* SecondConversionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ED6573275FBC8600A6A771 /* SecondConversionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		C4EDCCB626883C3200DC397B /* WorldTrotterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorldTrotterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4EDCCBA26883C3200DC397B /* WorldTrotterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldTrotterUITests.swift; sourceTree = "<group>"; };
 		C4EDCCBC26883C3200DC397B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C8ED6573275FBC8600A6A771 /* SecondConversionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondConversionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				C4EDCCA326883C3200DC397B /* LaunchScreen.storyboard */,
 				C4EDCCA626883C3200DC397B /* Info.plist */,
 				C4C1C6BA2739834F008C5F8D /* MapViewController.swift */,
+				C8ED6573275FBC8600A6A771 /* SecondConversionViewController.swift */,
 			);
 			path = WorldTrotter;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				C4EDCC9926883C3100DC397B /* AppDelegate.swift in Sources */,
 				C4EDCC9B26883C3100DC397B /* SceneDelegate.swift in Sources */,
 				C4C1C6BB2739834F008C5F8D /* MapViewController.swift in Sources */,
+				C8ED6574275FBC8600A6A771 /* SecondConversionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

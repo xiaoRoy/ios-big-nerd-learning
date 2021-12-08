@@ -1,4 +1,5 @@
 import UIKit
+import Combine
 
 var message: String? = "hello"
 
@@ -36,3 +37,6 @@ let number = 1
 number.description
 
 let optionalString = assumedString
+
+private let confirmNewPasswordDidChange = PassthroughSubject<String, Never>()
+                                            .debounce(for: .seconds(0.4), scheduler: RunLoop.main)
