@@ -11,6 +11,8 @@ class SecondConversionViewController: UIViewController {
     
     private var degreeInF: UILabel!
     
+    private var degreeInC: UILabel!
+    
     private let degreeColor = UIColor(red: 0.882, green: 0.345, blue: 0.161, alpha: 1.0)
     
     override func loadView() {
@@ -35,19 +37,47 @@ class SecondConversionViewController: UIViewController {
         
         
         let degreeUnitF = UILabel()
-        degreeUnitF.text = "degress Fahrenheit"
+        degreeUnitF.text = "degrees Fahrenheit"
         setup(degreenLabel: degreeUnitF, withFontSize: 36.0)
         view.addSubview(degreeUnitF)
         
         let degreeUnitFXCenterConstratint = degreeUnitF.centerXAnchor.constraint(equalTo: degreeInF.centerXAnchor)
         let degreeUnitFTopConstratint = degreeUnitF.topAnchor.constraint(equalTo: degreeInF.bottomAnchor, constant: 8.0)
         
+        
         let isReally = UILabel()
-        isReally.textColor = UIColor()
+        isReally.text = "is really"
+        isReally.font = isReally.font.withSize(36.0)
+        isReally.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(isReally)
+        
+        let isReallyXCenterConstraint = isReally.centerXAnchor.constraint(equalTo: degreeUnitF.centerXAnchor)
+        let isReaalyTopConstratint = isReally.topAnchor.constraint(equalTo: degreeUnitF.bottomAnchor, constant: 8.0)
+        
+        
+        degreeInC = UILabel()
+        degreeInC.text = "100"
+        setup(degreenLabel: degreeInC, withFontSize: 70.0)
+        view.addSubview(degreeInC)
+        
+        let degreeInCXCenterConstratint = degreeInC.centerXAnchor.constraint(equalTo: degreeInF.centerXAnchor)
+        let degreeInCTopConstraint = degreeInC.topAnchor.constraint(equalTo: isReally.bottomAnchor, constant: 8.0)
+        
+        let degreeUnitC = UILabel()
+        degreeUnitC.text = "degrees Celsius"
+        setup(degreenLabel: degreeUnitC, withFontSize: 36.0)
+        view.addSubview(degreeUnitC)
+        
+        let degreeUnitDXCetnerConstratint = degreeUnitC.centerXAnchor.constraint(equalTo: degreeInF.centerXAnchor)
+        let degreeUntDTopConstraint = degreeUnitC.topAnchor.constraint(equalTo: degreeInC.bottomAnchor, constant: 8.0)
         
         
         NSLayoutConstraint.activate([degreeInFXCenterConstratint, degreeInFTopConstraint,
-                                     degreeUnitFXCenterConstratint, degreeUnitFTopConstratint])
+                                     degreeUnitFXCenterConstratint, degreeUnitFTopConstratint,
+                                     isReallyXCenterConstraint, isReaalyTopConstratint,
+                                     degreeInCXCenterConstratint, degreeInCTopConstraint,
+                                     degreeUnitDXCetnerConstratint,degreeUntDTopConstraint
+                                    ])
     }
     
     private func setup(degreenLabel: UILabel, withFontSize fontsie: CGFloat) {
