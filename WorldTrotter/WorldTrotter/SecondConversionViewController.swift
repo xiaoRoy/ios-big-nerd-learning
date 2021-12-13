@@ -9,7 +9,7 @@ import UIKit
 
 class SecondConversionViewController: UIViewController {
     
-    private var degreeInF: UILabel!
+    private var degreeInF: UITextField!
     
     private var degreeInC: UILabel!
     
@@ -27,11 +27,16 @@ class SecondConversionViewController: UIViewController {
     }
     
     private func setupDegree() {
-        degreeInF = UILabel()
-        degreeInF.text = "212"
-        setup(degreenLabel: degreeInF, withFontSize: 70.0)
+        degreeInF = UITextField()
+        degreeInF.placeholder = "value"
+        degreeInF.textColor = degreeColor
+        degreeInF.font = degreeInF.font?.withSize(70.0)
+        degreeInF.adjustsFontSizeToFitWidth = true
+        degreeInF.borderStyle = .none
+        degreeInF.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(degreeInF)
         
+
         let degreeInFXCenterConstratint = degreeInF.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         let degreeInFTopConstraint = degreeInF.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8.0)
         
@@ -82,7 +87,7 @@ class SecondConversionViewController: UIViewController {
     
     private func setup(degreenLabel: UILabel, withFontSize fontsie: CGFloat) {
         degreenLabel.textColor = degreeColor
-        degreenLabel.font = degreeInF.font.withSize(fontsie)
+        degreenLabel.font = degreenLabel.font.withSize(fontsie)
         degreenLabel.translatesAutoresizingMaskIntoConstraints = false
     }
 }
