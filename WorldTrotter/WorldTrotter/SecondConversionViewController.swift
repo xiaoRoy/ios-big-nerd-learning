@@ -13,6 +13,8 @@ class SecondConversionViewController: UIViewController {
     
     private var degreeInC: UILabel!
     
+    private static let unknownDegreeInC = "???"
+    
     private let degreeColor = UIColor(red: 0.882, green: 0.345, blue: 0.161, alpha: 1.0)
     
     override func loadView() {
@@ -26,7 +28,7 @@ class SecondConversionViewController: UIViewController {
         setupDegree()
     }
     
-    private func setupDegree() {
+    private func setupDegreeInFTextField() {
         degreeInF = UITextField()
         degreeInF.placeholder = "value"
         degreeInF.textColor = degreeColor
@@ -34,9 +36,27 @@ class SecondConversionViewController: UIViewController {
         degreeInF.adjustsFontSizeToFitWidth = true
         degreeInF.borderStyle = .none
         degreeInF.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(degreeInF)
         
-
+        degreeInF.autocorrectionType = .no
+        degreeInF.spellCheckingType = .no
+        degreeInF.keyboardType = .decimalPad
+        
+        degreeInF.addTarget(self, action: #selector(degreeInFChanged(_:)), for: UIControl.Event.editingChanged)
+        view.addSubview(degreeInF)
+    }
+    
+    @objc
+    private func degreeInFChanged(_ sender:UITextField) {
+        if let currentDegree = sender.text, !currentDegree.isEmpty {
+            degreeInC.text = currentDegree
+        } else {
+            degreeInC.text = SecondConversionViewController.unknownDegreeInC
+        }
+    }
+    
+    private func setupDegree() {
+        setupDegreeInFTextField()
+        
         let degreeInFXCenterConstratint = degreeInF.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         let degreeInFTopConstraint = degreeInF.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8.0)
         
@@ -61,7 +81,7 @@ class SecondConversionViewController: UIViewController {
         
         
         degreeInC = UILabel()
-        degreeInC.text = "100"
+        degreeInC.text = SecondConversionViewController.unknownDegreeInC
         setup(degreenLabel: degreeInC, withFontSize: 70.0)
         view.addSubview(degreeInC)
         

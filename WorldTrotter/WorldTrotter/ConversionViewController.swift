@@ -8,6 +8,9 @@
 import UIKit
 
 class ConversionViewController: UIViewController {
+    
+    @IBOutlet
+    private var degreeInCLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +48,14 @@ class ConversionViewController: UIViewController {
 //        view.addSubview(secondView)
         firstView.addSubview(secondView)
     }
-
-
+    
+    @IBAction
+    private func degreeInFChanged(_ textField: UITextField) {
+        if let currentText = textField.text, !currentText.isEmpty {
+            degreeInCLabel.text = textField.text
+        } else {
+            degreeInCLabel.text = "???"
+        }
+    }
 }
 
