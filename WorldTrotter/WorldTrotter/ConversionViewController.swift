@@ -11,6 +11,9 @@ class ConversionViewController: UIViewController {
     
     @IBOutlet
     private var degreeInCLabel: UILabel!
+    
+    @IBOutlet
+    private var degreeInFTextField: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,5 +60,11 @@ class ConversionViewController: UIViewController {
             degreeInCLabel.text = "???"
         }
     }
+    
+    @IBAction
+    private func dismisKeyboard(_ sender: UITapGestureRecognizer){
+        degreeInFTextField.resignFirstResponder()
+    }
+    
 }
 
