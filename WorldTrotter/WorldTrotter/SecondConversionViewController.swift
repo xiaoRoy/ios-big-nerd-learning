@@ -26,6 +26,13 @@ class SecondConversionViewController: UIViewController {
         let backgroundColor = UIColor(red: 0.961, green: 0.957, blue: 0.980, alpha: 1.0)
         view.backgroundColor = backgroundColor
         setupDegree()
+        configureKeyboard()
+    }
+    
+    private func configureKeyboard() {
+        let tapGestureRecognizer = UITapGestureRecognizer()
+        tapGestureRecognizer.addTarget(self, action: #selector(dimissKeyboard(_:)))
+        view.addGestureRecognizer(tapGestureRecognizer)
     }
     
     private func setupDegreeInFTextField() {
@@ -109,5 +116,11 @@ class SecondConversionViewController: UIViewController {
         degreenLabel.textColor = degreeColor
         degreenLabel.font = degreenLabel.font.withSize(fontsie)
         degreenLabel.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    
+    @objc
+    private func dimissKeyboard(_ sender: UITapGestureRecognizer) {
+        degreeInF.resignFirstResponder()
     }
 }
