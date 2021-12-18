@@ -14,11 +14,21 @@ class ConversionViewController: UIViewController {
     
     @IBOutlet
     private var degreeInFTextField: UITextField!
+    
+    private var degreeInF: Measurement<UnitTemperature>?
+    
+    private var degreeInC: Measurement<UnitTemperature>? {
+        if let degreeInF = degreeInF {
+            return degreeInF.converted(to: UnitTemperature.celsius)
+        } else {
+            return nil
+        }
+    }
 
     override func viewDidLoad() {
-        super.viewDidLoad()
-        print("ConversionViewController loaded its view.")
         
+        super.viewDidLoad()
+        print("ConversionViewController loaded its view.")        
     }
     
     private func generateRandomColor() -> CGFloat{
