@@ -39,7 +39,12 @@ func findMinAndMax(numbers: [Int]) -> (min: Int, max: Int) {
     return (min, max)
 }
 
+//Function Argument Labels and Parameter Names
 
 func greeting(for person: String) -> String{
     "Hello, \(person)!"
+}
+
+func greeting(person: String, from hometown: String) -> String {
+    "Hello, \(person)! Glad you could visit from \(hometown)."
 }
