@@ -48,3 +48,29 @@ func greeting(for person: String) -> String{
 func greeting(person: String, from hometown: String) -> String {
     "Hello, \(person)! Glad you could visit from \(hometown)."
 }
+
+
+func arithmeticMean(_ numbers: Double...) -> Double {
+    var total: Double = 0.0
+    for number in numbers {
+        total += number
+    }
+    return total / Double(numbers.count)
+}
+
+
+func swap(_ first: inout Int, _ second: inout Int) {
+    let temp = first
+    first = second
+    second = temp
+}
+
+func doSwap() {
+    var first = 12
+    var second = 34
+    
+    swap(&first, &second)
+    
+    print("first is:\(first)")
+    print("second is:\(second)")
+}
