@@ -7,3 +7,8 @@ func backward(_ one: String, _ anohter: String) -> Bool {
 }
 
 let reversedNames = names.sorted(by:backward(_:_:))
+
+
+let reversedNamesA = names.sorted(by: {(one: String, another: String) -> Bool in
+    one > another
+})
