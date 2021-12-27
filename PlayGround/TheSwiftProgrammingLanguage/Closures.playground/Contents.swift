@@ -58,3 +58,30 @@ func transferDigitToName() -> [String]{
 
 transferDigitToName()
 
+//Trailing Closures
+class Server {}
+
+class Picture {
+}
+
+func loadPicture(from server: Server,
+                 completion: (Picture) -> Void,
+                 failure: () -> Void) {
+    func doLoad(picture: String, from: Server) -> Picture? {
+        return Picture()
+    }
+    
+    if let picture = doLoad(picture: "football.jpg", from: server) {
+        completion(picture)
+    } else {
+        failure()
+    }
+}
+
+loadPicture(from: Server()) {
+    picture in
+    print("Loaded picture:\(picture)")
+} failure: {
+    print("Fail to load a picture.")
+}
+
