@@ -85,3 +85,14 @@ loadPicture(from: Server()) {
     print("Fail to load a picture.")
 }
 
+//Capturing Values
+
+func makeIncrementer(forIncrement amount: Int) -> () -> Int {
+    var runningTotal = 0
+    
+    func incrementer() -> Int {
+        runningTotal += amount
+        return runningTotal
+    }
+    return incrementer
+}
