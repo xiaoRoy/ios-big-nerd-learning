@@ -10,3 +10,25 @@ func imageOfSize(_ size: CGSize, _ whatToDraw: () -> ()) ->UIImage {
 
 
 
+var now: String {
+    get {
+        return Date().description
+    }
+    
+    set {
+        print("You can not set now to \(newValue)")
+    }
+}
+
+now = "now"
+print("Now is \(now)")
+
+var nowB: String {
+    get {
+        Date().description
+    }
+}
+
+var nowC: String {
+    Date().description
+}
