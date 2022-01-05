@@ -9,6 +9,8 @@ import UIKit
 
 class ConversionViewController: UIViewController {
     
+    private static let unknownDegree: String = "???"
+    
     @IBOutlet
     private var degreeInCLabel: UILabel!
     
@@ -62,12 +64,20 @@ class ConversionViewController: UIViewController {
         firstView.addSubview(secondView)
     }
     
+    private func updateDegreeInCLabel() {
+        if let degreeInCTemp = degreeInC {
+            degreeInCLabel.text = degreeInCTemp.value.description
+        } else {
+            degreeInCLabel.text = ConversionViewController.unknownDegree
+        }
+    }
+    
     @IBAction
     private func degreeInFChanged(_ textField: UITextField) {
         if let currentText = textField.text, !currentText.isEmpty {
             degreeInCLabel.text = textField.text
         } else {
-            degreeInCLabel.text = "???"
+            degreeInCLabel.text = ConversionViewController.unknownDegree
         }
     }
     
