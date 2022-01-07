@@ -17,7 +17,11 @@ class ConversionViewController: UIViewController {
     @IBOutlet
     private var degreeInFTextField: UITextField!
     
-    private var degreeInF: Measurement<UnitTemperature>?
+    private var degreeInF: Measurement<UnitTemperature>? {
+        didSet {
+            updateDegreeInCLabel()
+        }
+    }
     
     private var degreeInC: Measurement<UnitTemperature>? {
         if let degreeInF = degreeInF {
@@ -26,11 +30,21 @@ class ConversionViewController: UIViewController {
             return nil
         }
     }
+    
+    private let numberFormatter: NumberFormatter = {
+        () -> NumberFormatter in
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        numberFormatter.minimumFractionDigits = 0
+        numberFormatter.maximumFractionDigits = 1
+        return numberFormatter
+    }()
 
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        print("ConversionViewController loaded its view.")        
+        print("ConversionViewController loaded its view.")
+        updateDegreeInCLabel()
     }
     
     private func generateRandomColor() -> CGFloat{
@@ -66,7 +80,7 @@ class ConversionViewController: UIViewController {
     
     private func updateDegreeInCLabel() {
         if let degreeInCTemp = degreeInC {
-            degreeInCLabel.text = degreeInCTemp.value.description
+            degreeInCLabel.text = numberFormatter.string(from: NSNumber(value: degreeInCTemp.value))
         } else {
             degreeInCLabel.text = ConversionViewController.unknownDegree
         }
@@ -74,11 +88,17 @@ class ConversionViewController: UIViewController {
     
     @IBAction
     private func degreeInFChanged(_ textField: UITextField) {
-        if let currentText = textField.text, !currentText.isEmpty {
-            degreeInCLabel.text = textField.text
+        if let currentText = textField.text, let currentValue = Double(currentText) {
+            print("current:\(currentText)")
+            degreeInF = Measurement(value: currentValue, unit: .fahrenheit)
         } else {
-            degreeInCLabel.text = ConversionViewController.unknownDegree
+            degreeInF = nil
         }
+//        if let currentText = textField.text, !currentText.isEmpty {
+//            degreeInCLabel.text = textField.text
+//        } else {
+//            degreeInCLabel.text = ConversionViewController.unknownDegree
+//        }
     }
     
     @IBAction
