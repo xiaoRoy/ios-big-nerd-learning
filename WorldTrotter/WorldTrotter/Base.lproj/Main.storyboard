@@ -76,6 +76,7 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
                                 <connections>
                                     <action selector="degreeInFChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="mGZ-v3-lh6"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="gkd-gE-pxO"/>
                                 </connections>
                             </textField>
                         </subviews>

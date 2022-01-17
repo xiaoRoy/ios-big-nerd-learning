@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ConversionViewController: UIViewController {
+class ConversionViewController: UIViewController, UITextFieldDelegate {
     
     private static let unknownDegree: String = "???"
     
@@ -89,7 +89,7 @@ class ConversionViewController: UIViewController {
     @IBAction
     private func degreeInFChanged(_ textField: UITextField) {
         if let currentText = textField.text, let currentValue = Double(currentText) {
-            print("current:\(currentText)")
+//            print("current:\(currentText)")
             degreeInF = Measurement(value: currentValue, unit: .fahrenheit)
         } else {
             degreeInF = nil
@@ -105,6 +105,23 @@ class ConversionViewController: UIViewController {
     private func dismisKeyboard(_ sender: UITapGestureRecognizer){
         degreeInFTextField.resignFirstResponder()
     }
+    
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        print("Current text: \(String(describing: textField.text))")
+        print("Replacment text:\(string)")
+        let existingTextHasDecimalSeparator = textField.text?.range(of: ".")
+        let replacementTextHasDecimalSeparator = string.range(of: ".")
+        if existingTextHasDecimalSeparator != nil,
+           replacementTextHasDecimalSeparator != nil {
+            return false
+        } else {
+            return true
+            
+        }
+    }
+
     
 }
 
