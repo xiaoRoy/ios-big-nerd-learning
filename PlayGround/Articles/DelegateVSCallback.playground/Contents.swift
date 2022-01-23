@@ -2,9 +2,28 @@ import UIKit
 
 class MatheMaticViewController :ShowResultDelegate  {
     func show(result: Int) {
-        <#code#>
+        display(result:result)
     }
     
+    private func display(result:Int) {
+        print(result)
+    }
+    
+    
+    private func tryToShowResultFirst(first: Int, second: Int) {
+        let numberOperation = NumberOperation()
+        numberOperation.showResultDelegate = self
+        numberOperation.sum(one: first, another: second)
+        
+    }
+    
+    private func tryToShowResultSecond(first: Int, second: Int) {
+        let numberOperationWithClosure = NumberOperationWithClosure()
+        
+        numberOperationWithClosure.sum(one: first, another: second, action: { [weak self](result: Int) -> Void in
+            self?.display(result: result)}
+        )
+    }
     
 }
 
@@ -25,4 +44,9 @@ class NumberOperation {
 
 class NumberOperationWithClosure {
     
+    
+    func sum(one: Int, another: Int, action: (Int) -> Void) {
+        let result = one + another
+        action(result)
+    }
 }
